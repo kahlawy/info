@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Add your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      color: #335a81;
+    }
+
+    ol {
+      list-style-type: none;
+    }
+
+    li {
+      margin-bottom: 15px;
+      font-size: large;
+      list-style-type: none;
+    }
+
+    p {
+      font-weight: bold;
+    }
+
+    .correct-answer {
+      color: green;
+    }
+
+    .incorrect-answer {
+      color: red;
+    }
+
+    .answer {
+      color: black;
+    }
+
+    #responseArea {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+    }
+
+    #resultArea {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+      color: #335a81;
+    }
+
+    input {
+      font-size: large;
+      color: royalblue;
+    }
+
+    .alert-primary {
+    --bs-alert-color: #00b7f3;
+    --bs-alert-bg: #f1fff6 ;
+    /* --bs-alert-border-color: #dee2e6; */
+    --bs-alert-link-color: var(--bs-primary-text-emphasis);
+}
+    .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #335a81;
+    --bs-btn-border-color: #adb5bd;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg:  #00b7f3 ;
+    --bs-btn-hover-border-color: #0a58ca;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #dee2e6;
+    --bs-btn-active-border-color: #0a53be;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #00b7f3;
+    --bs-btn-disabled-border-color: #dee2e6;
+}
+.alert-secondary{
+  background-color: #f1f8ff;
+  color: #335a81;
+}
+    img {
+  max-width: 100%;
+  height: auto;
+}
+#timer {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: left;
+      margin-top: 50px;
+      padding-bottom: 10px;
+    }
+     a {
+            text-decoration: none;
+            color: #335a81;
+           text-align: center;
+        }
+  </style>
+</head>
+
+<body>
+
+  <div class="container mt-5">
+    <img src="https://its.ucsc.edu/security/newsecurity.png" alt="Information Security" style="display: block; margin: 0 auto;">
+
+    <div class="alert --bs-alert-bg" role="alert">
+      <!-- <h1 class="text-center mb-4 ">Software Quality Assurance</h1>-->
+      <h2 class="text-center mb-4 ">Information Security Mid-term 2023/2024</h2>
+      <!-- <a href="answers.html" target="_blank">View Answers Page</a> -->
+</h3>
+    </div>
+    <span style="font-size:x-large;"> <strong>  Time : </strong></span>
+    <span id="timer">60:00</span>
+   <br>
+
+    <div id="google_translate_element">
+    <form id="quizForm">
+        <p class="alert alert-secondary">1- Vigenère cipher uses 26 Caesar ciphers with shifts of 0 through 25 for its operation.</p>
+        <ul>
+        <li><input type="radio" name="q1" value="T"> (T) True</li>
+        <li><input type="radio" name="q1" value="F"> (F) False</li>
+        </ul>
+        <p class="alert alert-secondary">2- Cryptogram is the unintelligible encoded message resulting from an enciphering</p>
+        <ul>
+        <li><input type="radio" name="q2" value="T"> (T) True</li>
+        <li><input type="radio" name="q2" value="F"> (F) False</li>
+        </ul>
+        <p class="alert alert-secondary">3- ….. cipher use the tabula recta (square) to cipher the plaintext by finding the column based on the plaintext and finding the row based on the keyword, and if the keyword needs to be extended, it don't repeat the keyword</p>
+        <ul>
+        <li><input type="radio" name="q3" value="A"> (A) Vigenère</li>
+        <li><input type="radio" name="q3" value="B"> (B) Running Key</li>
+        <li><input type="radio" name="q3" value="C"> (C) Columnar</li>
+        <li><input type="radio" name="q3" value="D"> (D) Myszkowski</li>
+        </ul>
+        <p class="alert alert-secondary">4- There is no encryption algorithm is unconditionally secure, but is computationally secure</p>
+        <ul>
+        <li><input type="radio" name="q4" value="T"> (T) True</li>
+        <li><input type="radio" name="q4" value="F"> (F) False</li>
+        </ul>
+        <p class="alert alert-secondary">5- ….. is the state of information being hidden from unauthorized individuals or systems</p>
+        <ul>
+        <li><input type="radio" name="q5" value="A"> (A) Authenticity</li>
+        <li><input type="radio" name="q5" value="B"> (B) Integrity</li>
+        <li><input type="radio" name="q5" value="C"> (C) Confidentiality</li>
+        <li><input type="radio" name="q5" value="D"> (D) Accuracy</li>
+        </ul>
+        <p class="alert alert-secondary">6- Implementing the top-down approach for information security lacks participants' supports</p>
+        <ul>
+        <li><input type="radio" name="q6" value="T"> (T) True</li>
+        <li><input type="radio" name="q6" value="F"> (F) False</li>
+        </ul>
+        <p class="alert alert-secondary">7- Homophones provide multiple substitutes for a single letter to strength the … cipher</p>
+        <ul>
+        <li><input type="radio" name="q7" value="A"> (A) polyalphabetic</li>
+        <li><input type="radio" name="q7" value="B"> (B) monoalphabetic</li>
+        <li><input type="radio" name="q7" value="C"> (C) book</li>
+        <li><input type="radio" name="q7" value="D"> (D) template</li>
+        </ul>
+        <p class="alert alert-secondary">8- Route cipher is asymmetric transposition cipher</p>
+        <ul>
+        <li><input type="radio" name="q8" value="T"> (T) True</li>
+        <li><input type="radio" name="q8" value="F"> (F) False</li>
+        </ul>
+        <p class="alert alert-secondary">9- Attack is classified along …. dimensions into two classes in each dimension</p>
+        <ul>
+        <li><input type="radio" name="q9" value="A"> (A) two</li>
+        <li><input type="radio" name="q9" value="B"> (B) three</li>
+        <li><input type="radio" name="q9" value="C"> (C) four</li>
+        <li><input type="radio" name="q9" value="D"> (D) five</li>
+        </ul>
+        <p class="alert alert-secondary">10- ….. layers of security should exist in any successful organization</p>
+        <ul>
+        <li><input type="radio" name="q10" value="A"> (A) Three</li>
+        <li><input type="radio" name="q10" value="B"> (B) Five</li> 
+        <li><input type="radio" name="q10" value="C"> (C) Six</li>
+        <li><input type="radio" name="q10" value="D"> (D) Seven</li>
+        </ul>
+        <p class="alert alert-secondary">11- SecSDLC is an abbreviation of the term "Security Systems Development Life Cycle"</p>
+        <ul>
+        <li><input type="radio" name="q11" value="T"> (T) True</li>
+        <li><input type="radio" name="q11" value="F"> (F) False</li>
+        </ul>
+        <p class="alert alert-secondary">12- In public-key cipher, both sender and receiver use the same key</p>
+        <ul>
+        <li><input type="radio" name="q12" value="T"> (T) True</li>
+        <li><input type="radio" name="q12" value="F"> (F) False</li>
+        </ul>
+        <p class="alert alert-secondary">13- …. cipher operation uses a matrix whose number of columns is determined by the key, which has to be a word whose its identical letters should have the same numbers assigned.</p>
+        <ul>
+        <li><input type="radio" name="q13" value="A"> (A) Myszkowski</li>
+        <li><input type="radio" name="q13" value="B"> (B) Hill</li>
+        <li><input type="radio" name="q13" value="C"> (C) Playfair</li>
+        <li><input type="radio" name="q13" value="D"> (D) Columnar</li>
+        </ul>
+        <p class="alert alert-secondary">14- … model of information security is defined by the Committee on National Security Systems</p>
+        <ul>
+        <li><input type="radio" name="q14" value="A"> (A) Triad</li>
+        <li><input type="radio" name="q14" value="B"> (B) Quad</li>
+        <li><input type="radio" name="q14" value="C"> (C) Hexa</li>
+        <li><input type="radio" name="q14" value="D"> (D) Octa</li>
+        </ul>
+        <p class="alert alert-secondary">15- In brute-force attack, the attacker tries every possible key on a piece of ciphertext until an intelligible translation into plaintext is obtained</p>
+        <ul>
+        <li><input type="radio" name="q15" value="T"> (T) True</li>
+        <li><input type="radio" name="q15" value="F"> (F) False</li>
+        </ul>
+        <p class="alert alert-secondary">16- There are …. types of cryptanalytic attacks</p>
+        <ul>
+        <li><input type="radio" name="q16" value="A"> (A) two</li>
+        <li><input type="radio" name="q16" value="B"> (B) three</li>
+        <li><input type="radio" name="q16" value="C"> (C) four</li>
+        <li><input type="radio" name="q16" value="D"> (D) five</li>
+        </ul>
+        <p class="alert alert-secondary">17- Transposition based ciphers are more complex than substitution based ciphers</p>
+        <ul>
+        <li><input type="radio" name="q17" value="T"> (T) True</li>
+        <li><input type="radio" name="q17" value="F"> (F) False</li>
+        </ul>
+        <p class="alert alert-secondary">18- …. cipher shuffles (jumbles) the letters, of a certain alphabet, arbitrarily such that each plaintext letter maps to a different random ciphertext letter, hence the key is 26 letters long, giving now a total of 26! keys</p>
+        <ul>
+        <li><input type="radio" name="q18" value="A"> (A) Caesar</li>
+        <li><input type="radio" name="q18" value="B"> (B) Polyalphabetic</li>
+        <li><input type="radio" name="q18" value="C"> (C) XOR</li>
+        <li><input type="radio" name="q18" value="D"> (D) Monoalphabetic</li>
+        </ul>
+        <p class="alert alert-secondary">19- Hill cipher must use a square 5x5 matrix of key letters for its operation</p>
+        <ul>
+        <li><input type="radio" name="q19" value="T"> (T) True</li>
+        <li><input type="radio" name="q19" value="F"> (F) False</li>
+        </ul>
+        <p class="alert alert-secondary">20- … cipher encrypts digrams (pairs of letters) of plaintext together as single units and translates these units into ciphertext digrams</p>
+        <ul>
+        <li><input type="radio" name="q20" value="A"> (A) Vernam</li>
+        <li><input type="radio" name="q20" value="B"> (B) Playfair</li>
+        <li><input type="radio" name="q20" value="C"> (C) Hill</li>
+        <li><input type="radio" name="q20" value="D"> (D) Vigenère</li>
+        </ul>
+
+        <div style="text-align: center;">
+          <button class="btn btn-primary" type="button" onclick="submitQuiz()" style="margin: 10px;">Submit
+            Answers</button>
+        </div>
+
+        <div id="resultArea" class="labl-primery"> </div>
+        <div id="responseArea" class="labl-primery"> </div>
+
+
+    </form>
+  </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+  <script>
+    // Set the initial time to 60 minutes
+  let time = 60 * 60 ; // seconds
+
+function updateTimer() {
+  const minutes = Math.floor(time / 60);
+  const seconds = time % 60;
+
+  // Display the time in the "timer" div
+  document.getElementById('timer').innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+  // Decrement time
+  time--;
+
+  // Check if the timer has reached zero
+  if (time < 0) {
+    clearInterval(timerInterval);
+    alert('Time is up!');
+  }
+}
+
+// Call the updateTimer function every second
+const timerInterval = setInterval(updateTimer, 1000);
+    var userSelections = {};
+    var totalQuestions = 0;
+    var totalCorrectAnswers = 0;
+    var totalIncorrectAnswers = 0;
+
+    function submitQuiz() {
+
+ time = 0;
+      // Your JavaScript logic to check and display results goes here
+
+      var correctAnswers = {
+        q1: 'T',q2: 'T',q3: 'B',q4: 'T',q5: 'C',q6: 'F',q7: 'B',
+        q8: 'F',q9: 'B',q10: 'B',q11: 'T',q12: 'F',q13: 'A',q14: 'A',
+        q15: 'T',q16: 'D',q17: 'T',q18: 'D',q19: 'F',q20: 'B'
+      };
+
+      // Check and color the selected answers
+      checkAnswer(1, correctAnswers.q1);
+      checkAnswer(2, correctAnswers.q2);
+      checkAnswer(3, correctAnswers.q3);
+      checkAnswer(4, correctAnswers.q4);
+      checkAnswer(5, correctAnswers.q5);
+      checkAnswer(6, correctAnswers.q6);
+      checkAnswer(7, correctAnswers.q7);
+      checkAnswer(8, correctAnswers.q8);
+      checkAnswer(9, correctAnswers.q9);
+      checkAnswer(10, correctAnswers.q10);
+      checkAnswer(11, correctAnswers.q11);
+      checkAnswer(12, correctAnswers.q12);
+      checkAnswer(13, correctAnswers.q13);
+      checkAnswer(14, correctAnswers.q14);
+      checkAnswer(15, correctAnswers.q15);
+      checkAnswer(16, correctAnswers.q16);
+      checkAnswer(17, correctAnswers.q17);
+      checkAnswer(18, correctAnswers.q18);
+      checkAnswer(19, correctAnswers.q19);
+      checkAnswer(20, correctAnswers.q20);
+           
+      // Update total counts
+      totalQuestions = Object.keys(userSelections).length;
+      // totalCorrectAnswers = Object.values(userSelections).filter(answer => answer === 'A').length;
+      totalCorrectAnswers = Object.keys(correctAnswers).filter(question => userSelections[question] === correctAnswers[question]).length;
+
+      totalIncorrectAnswers = totalQuestions - totalCorrectAnswers;
+
+      // list of correct Answers 
+      var allCorrectAnswers = Object.values(correctAnswers).flat();
+
+      console.log(allCorrectAnswers);
+
+      // Display summary response
+      displayResponse();
+
+      // Clear Answer color
+     // selectedAnswer.parentNode.classList.add('answer')
+    }
+
+    function checkAllCorrectAnswers(questionNumber, correctAnswers) {
+      // Get all checkboxes for the question
+      var checkboxes = document.querySelectorAll('input[name="q' + questionNumber + '"]');
+
+      // Uncheck all checkboxes first
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+
+      // Select only the correct answers
+      correctAnswers.forEach(correctAnswer => {
+        var checkbox = document.querySelector('input[name="q' + questionNumber + '"][value="' + correctAnswer + '"]');
+        if (checkbox) {
+          checkbox.checked = true;
+        }
+      });
+
+      // Store all correct answers
+      userSelections['q' + questionNumber] = correctAnswers;
+    }
+
+    function checkAnswer(questionNumber, correctAnswer) {
+      // Get user's selected answer
+      var selectedAnswer = document.querySelector('input[name="q' + questionNumber + '"]:checked');
+
+      // Store user's selection
+      userSelections['q' + questionNumber] = selectedAnswer ? selectedAnswer.value : null;
+
+      // Display correct/incorrect color
+
+      
+
+      if (selectedAnswer) {
+
+       // selectedAnswer.parentNode.classList.add('answer')
+        //selectedAnswer.parentNode.classList.remove('correct-answer', 'incorrect-answer');
+
+
+        if (selectedAnswer.value === correctAnswer) {
+          
+          selectedAnswer.parentNode.classList.add('correct-answer'); // Correct answer
+
+        } else {
+          selectedAnswer.parentNode.classList.add('incorrect-answer'); // Incorrect answer
+         
+        }
+
+      }
+      
+        
+    }
+ 
+    function displayResponse() {
+      var responseArea = document.getElementById('responseArea');
+      var resultArea = document.getElementById('resultArea');
+
+      responseArea.innerHTML = '<h2 class="mb-3">Quiz Summary</h2>';
+      responseArea.innerHTML += '<p class="alert alert-secondary">Total Correct Answers: ' + totalCorrectAnswers + '</p>';
+      responseArea.innerHTML += '<p class="alert alert-secondary">Total Incorrect Answers: ' + totalIncorrectAnswers + '</p>';
+      responseArea.innerHTML += '<p class="alert alert-secondary">Total Questions: ' + totalQuestions + '</p>';
+      resultArea.innerHTML = '<h2 > Result : ' + (Math.round(totalCorrectAnswers / totalQuestions * 10000) / 100).toFixed(2) + ' % </h2>';
+      // resultArea.innerHTML = '<h2 > Result : ' + (totalCorrectAnswers / totalQuestions * 100) + ' % </h2>';
+
+      // for (var question in userSelections) {
+      //   var selectedAnswer = userSelections[question];
+      //   var responseText = selectedAnswer
+      //     ? '<p class="alert alert-secondary">Question ' + question.slice(1) + ': Your answer was ' + selectedAnswer + '.</p>'
+      //     : '<p class="alert alert-secondary">Question ' + question.slice(1) + ': You did not answer this question.</p>';
+
+      //   responseArea.innerHTML += responseText;
+      // }
+    }
+  </script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      }
+    </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>
